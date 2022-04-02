@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.2
+// @version      0.3
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -14,8 +14,8 @@ if (window.top !== window.self) {
         (function () {
             const div = document.createElement("div");
             div.id = "Silksong";
-            div.style = "height:3550px; width:4400px; position: absolute; left: 0; right:0; top: 0; bottom:0; transform: translateX(11350px) translateY(17350px);     background-size: cover;" +
-    "background-image: url('https://cdn.discordapp.com/attachments/959559823089860638/959588823602458644/unknown.png'); opacity: 0.3;";
+            div.style = "height:3900px; width:5250px; position: absolute; inset: 0px; transform: translateX(11250px) translateY(17150px);     background-size: cover;" +
+    "background-image: url('https://cdn.discordapp.com/attachments/959600167756111973/959827970053259294/Kebab.png'); opacity: 0.3;";
             return div;
         })())
 
