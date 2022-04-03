@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.6.4
+// @version      0.7.0
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -10,9 +10,9 @@
 // ==/UserScript==
 
 function makeOverlay(id, url, width, height, x, y) {
-    x *= 50; 
-    y *= 50; 
-    width*=50; 
+    x *= 50;
+    y *= 50;
+    width*=50;
     height *= 50;
     const div = document.createElement("div");
     div.className = "Template";
@@ -43,6 +43,37 @@ if (window.top !== window.self) {
             });
             slider.appendChild(input);
             return slider;
+        })()
+        );
+
+        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
+        (function () {
+            const toggle = document.createElement("div");
+            toggle.style = "height: 36px; width: 100px; position: absolute;  right: 350px; top: 0;  background-color: #FFF;pointer-events: all;border-radius: 26px; display: flex; justify-content: space-around; align-items: center;";
+            const input = document.createElement("input");
+            input.type = 'checkbox';
+            input.name = "toggle";
+            input.addEventListener('click', (event) => {
+                console.log(event.currentTarget.checked);
+                document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].querySelectorAll(".Template").forEach(element => {
+                    if (event.currentTarget.checked) {
+                        element.style["-webkit-mask-image"] = `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg")`;
+                        element.style["-webkit-mask-repeat"] = "repeat";
+                        element.style["-webkit-mask-size"] = "50px";
+                    } else {
+                        element.style["-webkit-mask-image"] = null;
+                        element.style["-webkit-mask-repeat"] = null;
+                        element.style["-webkit-mask-size"] = null;
+                    }
+                });
+            });
+            const label = document.createElement("label");
+            label.style = "color: black;";
+            label.innerHTML = "Toggle dot";
+            label.for = "toggle";
+            toggle.appendChild(input);
+            toggle.appendChild(label);
+            return toggle;
         })()
         );
 
