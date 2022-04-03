@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.6.0
+// @version      0.6.1
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -35,23 +35,10 @@ if (window.top !== window.self) {
             const div = document.createElement("div");
             div.className = "Template";
             div.id = "Radiance";
-            div.style = "height:5250px; width:4700px; position: absolute; inset: 0px; transform: translateX(30250px) translateY(82500px);     background-size: cover; image-rendering: pixelated;" +
+            div.style = "height:5250px; width:4700px; position: absolute; inset: 0px; transform: translateX(12350px) translateY(66950px);     background-size: cover; image-rendering: pixelated;" +
     "background-image: url('https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png'); opacity: 0.3;";
             return div;
         })())
-
-        /// BACKUP PLAN
-        /*
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(
-        (function () {
-            const div = document.createElement("div");
-            div.className = "Template";
-            div.id = "Radiance2";
-            div.style = "height:5050px; width:4550px; position: absolute; inset: 0px; transform: translateX(15250px) translateY(82500px);     background-size: cover; image-rendering: pixelated;" +
-    "background-image: url('https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png'); opacity: 0.3;";
-            return div;
-        })())
-        */
 
         document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
         (function () {
