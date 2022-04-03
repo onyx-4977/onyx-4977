@@ -26,20 +26,6 @@ if (window.top !== window.self) {
         makeOverlay("Silksong",     "https://raw.githubusercontent.com/onyx-4977/onyx-4977/main/SilksongTemplate.png", 525, 390, 225, 343);
         makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png",        560, 350, 1300, 50);
         makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",            470, 525, 247,1339);
-      
-
-        /// BACKUP PLAN
-        /*
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(
-        (function () {
-            const div = document.createElement("div");
-            div.className = "Template";
-            div.id = "Radiance2";
-            div.style = "height:5050px; width:4550px; position: absolute; inset: 0px; transform: translateX(15250px) translateY(82500px);     background-size: cover; image-rendering: pixelated;" +
-    "background-image: url('https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png'); opacity: 0.3;";
-            return div;
-        })())
-        */
 
         document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
         (function () {
