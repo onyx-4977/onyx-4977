@@ -1,44 +1,27 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.6.0
+// @version      0.6.1
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @grant        none
 // ==/UserScript==
+
+function makeOverlay(id, url, width, height, x, y) {
+    const div = document.createElement("div");
+    div.className = "Template";
+    div.id = id;
+    div.style = `height:${height}px; width:${width}px; position: absolute; inset: 0px; transform: translateX(${x}px) translateY(${y}px); background-size: cover; image-rendering: pixelated; background-image: url('${url}'); opacity: 0.3;`;
+    document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(div);
+}
+
 if (window.top !== window.self) {
     window.addEventListener('load', () => {
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(
-        (function () {
-            const div = document.createElement("div");
-            div.className = "Template";
-            div.id = "Silksong";
-            div.style = "height:3900px; width:5250px; position: absolute; inset: 0px; transform: translateX(11250px) translateY(17150px);     background-size: cover; image-rendering: pixelated;" +
-    "background-image: url('https://raw.githubusercontent.com/onyx-4977/onyx-4977/main/SilksongTemplate.png'); opacity: 0.3;";
-            return div;
-        })())
-
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(
-        (function () {
-            const div = document.createElement("div");
-            div.className = "Template";
-            div.id = "HollowKnight";
-            div.style = "height:3500px; width:5600px; position: absolute; inset: 0px; transform: translateX(65000px) translateY(2500px);     background-size: cover; image-rendering: pixelated;" +
-    "background-image: url('https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png'); opacity: 0.3;";
-            return div;
-        })())
-
-        document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(
-        (function () {
-            const div = document.createElement("div");
-            div.className = "Template";
-            div.id = "Radiance";
-            div.style = "height:5250px; width:4700px; position: absolute; inset: 0px; transform: translateX(30250px) translateY(82500px);     background-size: cover; image-rendering: pixelated;" +
-    "background-image: url('https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png'); opacity: 0.3;";
-            return div;
-        })())
+        makeOverlay("Silksong",     "https://raw.githubusercontent.com/onyx-4977/onyx-4977/main/SilksongTemplate.png", 5250, 3900, 11250, 17150);
+        makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png",        5600, 3500, 65000, 2500);
+        makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",            4700, 5250, 30250, 82500);
 
         /// BACKUP PLAN
         /*
