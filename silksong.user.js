@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.7.11
+// @version      0.7.12
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -24,7 +24,7 @@ function makeOverlay(id, url, width, height, x, y) {
 if (window.top !== window.self) {
     window.addEventListener('load', () => {
         makeOverlay("Silksong",     "https://github.com/onyx-4977/onyx-4977/raw/main/SilksongTemplate.png",     87,  78,  225,  343);
-        makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png", 128, 75,  1295, 47);
+        makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png", 124, 92,  1297, 49);
         makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",     96,  106, 246,  1339);
         makeOverlay("EldenRing",    "https://github.com/onyx-4977/onyx-4977/raw/main/EldenringTemplate.png",    49,  64,  176,  386);
         makeOverlay("NikolaTesla",  "https://github.com/onyx-4977/onyx-4977/raw/main/NikolaTeslaTemplate.png",  51,  43,  175,  343);
