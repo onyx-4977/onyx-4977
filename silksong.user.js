@@ -27,6 +27,7 @@ if (window.top !== window.self) {
         makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png", 124, 92,  1297, 49);
         makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",     96,  106, 246,  1339);
         makeOverlay("EldenRing",    "https://github.com/onyx-4977/onyx-4977/raw/main/EldenringTemplate.png",    49,  64,  176,  386);
+        makeOverlay("NikolaTesla",  "https://github.com/onyx-4977/onyx-4977/raw/main/NikolaTeslaTemplate.png",  51,  43,  175,  343);
 
         document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
         (function () {
