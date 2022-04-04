@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.7.9
+// @version      0.7.10
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -17,7 +17,7 @@ function makeOverlay(id, url, width, height, x, y) {
     const div = document.createElement("div");
     div.className = "Template";
     div.id = id;
-    div.style = `height:${height}px; width:${width}px; position: absolute; inset: 0px; transform: translateX(${x}px) translateY(${y}px); background-size: cover; image-rendering: pixelated; background-image: url('${url}'); opacity: 0.3;`;
+    div.style = `height:${height}px; width:${width}px; position: absolute; inset: 0px; transform: translateX(${x}px) translateY(${y}px); background-size: cover; image-rendering: pixelated; background-image: url('${url}'); opacity: 1`;
     document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].appendChild(div);
 }
 
@@ -27,7 +27,6 @@ if (window.top !== window.self) {
         makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png", 128, 75,  1295, 47);
         makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",     96,  106, 246,  1339);
         makeOverlay("EldenRing",    "https://github.com/onyx-4977/onyx-4977/raw/main/EldenringTemplate.png",    49,  64,  176,  386);
-        makeOverlay("Gandalf",      "https://github.com/onyx-4977/onyx-4977/raw/main/GandalfTemplate.png",      71,  66,  183,  1379);
 
         document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
         (function () {
@@ -38,8 +37,9 @@ if (window.top !== window.self) {
             input.min = '0';
             input.max = '1';
             input.step = '0.1';
-            input.value = '0.3';
+            input.value = '1';
             input.style = "margin: 10px;left: 0;right: 0;top: 0;bottom: 0;box-sizing: border-box;position: absolute;";
+            input.id = 'templateSlider'
             input.addEventListener('input', (event) => {
                 document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].querySelectorAll(".Template").forEach(element => {element.style.opacity = event.currentTarget.value});
             });
@@ -56,7 +56,6 @@ if (window.top !== window.self) {
             input.type = 'checkbox';
             input.name = "toggle";
             input.addEventListener('click', (event) => {
-                console.log(event.currentTarget.checked);
                 document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].querySelectorAll(".Template").forEach(element => {
                     if (event.currentTarget.checked) {
                         element.style["-webkit-mask-image"] = `url("https://raw.githubusercontent.com/onyx-4977/onyx-4977/f648a8946a1fe2f37c7b6593d5c889ab7be95085/Dot.svg")`;
@@ -69,6 +68,7 @@ if (window.top !== window.self) {
                     }
                 });
             });
+            input.click()
             const label = document.createElement("label");
             label.style = "color: black;";
             label.innerHTML = "Toggle dot";
