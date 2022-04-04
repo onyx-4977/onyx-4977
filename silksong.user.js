@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.7.6
+// @version      0.7.7
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -25,8 +25,7 @@ if (window.top !== window.self) {
     window.addEventListener('load', () => {
         makeOverlay("Silksong",     "https://github.com/onyx-4977/onyx-4977/raw/main/SilksongTemplate.png",     87,  78,  225,  343);
         makeOverlay("HollowKnight", "https://github.com/onyx-4977/onyx-4977/raw/main/HollowKnightTemplate.png", 128, 75,  1295, 47);
-        makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",     96,  106, 246,  1339);
-        makeOverlay("Gandalf",      "https://github.com/onyx-4977/onyx-4977/raw/main/GandalfTemplate.png",      71,  66,  183,  1379);
+        makeOverlay("Radiance",     "https://github.com/onyx-4977/onyx-4977/raw/main/RadianceTemplate.png",     94,  105, 247,  1339);
 
         document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByClassName("bottom-controls")[0].appendChild(
         (function () {
