@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.7.4
+// @version      0.7.5
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
@@ -57,7 +57,7 @@ if (window.top !== window.self) {
                 console.log(event.currentTarget.checked);
                 document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-camera")[0].shadowRoot.children[0].children[0].children[0].querySelectorAll(".Template").forEach(element => {
                     if (event.currentTarget.checked) {
-                        element.style["-webkit-mask-image"] = `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg")`;
+                        element.style["-webkit-mask-image"] = `url("https://raw.githubusercontent.com/onyx-4977/onyx-4977/f648a8946a1fe2f37c7b6593d5c889ab7be95085/Dot.svg")`;
                         element.style["-webkit-mask-repeat"] = "repeat";
                         element.style["-webkit-mask-size"] = "50px";
                     } else {
