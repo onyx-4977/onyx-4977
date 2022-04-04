@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Silksong Place
 // @namespace    https://www.reddit.com/r/HollowKnight/
-// @version      0.7.9
+// @version      0.7.10
 // @description  try to take over r/place!
 // @author       OnyX_#4977
 // @match        https://hot-potato.reddit.com/embed*
